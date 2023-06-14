@@ -23,7 +23,7 @@ rosmsg show Pose
 while False:
 {
    rosservice call /turtle1/teleport_absolute 2 3 0
- rospy.set_param = 1 + b
+ rospy.set_param2 = 0 + rospy.set_param1
    
    
 }
