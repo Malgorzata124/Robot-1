@@ -1,10 +1,14 @@
 bool data
 jupyter_notebooks
 rosservice type /reset
+rosrun turtlesim turtlesim_node
+rosservice call /kill turtle1
+rosmsg show geometry_msgs/Pose
+rosservice call /turtle1/teleport_absolute 0 0 0
 print(Witaj)
 rostopic info /turtle1/cmd_vel
 rosmsg show geometry_msgs/Pose
-rosservice call /turtle2/teleport_absolute 2 4 0
+rosservice call /turtle1/teleport_absolute 2 4 0
 
 while True:
  {
@@ -21,3 +25,4 @@ while False:
    
    
 }
+
