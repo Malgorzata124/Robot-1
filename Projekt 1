@@ -9,6 +9,8 @@ print(Witaj)
 rostopic info /turtle1/cmd_vel
 rosmsg show geometry_msgs/Pose
 rosservice call /turtle1/teleport_absolute 2 4 0
+rospy.has_param('robot_on')
+rospy.set_param('robot_on', False)
 
 while True:
  {
@@ -21,7 +23,7 @@ rosmsg show Pose
 while False:
 {
    rosservice call /turtle1/teleport_absolute 2 3 0
-   a = 1 + b
+ rospy.set_param = 1 + b
    
    
 }
