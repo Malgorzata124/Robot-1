@@ -1,2 +1,23 @@
+bool data
 jupyter_notebooks
+rosservice type /reset
+print(Witaj)
 rostopic info /turtle1/cmd_vel
+rosmsg show geometry_msgs/Pose
+rosservice call /turtle2/teleport_absolute 2 4 0
+
+while True:
+ {
+print(Znaleziono człowieka!)
+rosmsg show Pose
+
+
+ }
+ 
+while False:
+{
+   rosservice call /turtle2/teleport_absolute 2 3 0
+   a = 1 + b
+   
+   
+}
