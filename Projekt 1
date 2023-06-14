@@ -2,7 +2,7 @@ bool data
 jupyter_notebooks
 rosservice type /reset
 rosrun turtlesim turtlesim_node
-rosservice call /kill turtle1
+rosservice call /clear
 rosmsg show geometry_msgs/Pose
 rosservice call /turtle1/teleport_absolute 0 0 0
 print(Witaj)
@@ -20,7 +20,7 @@ rosmsg show Pose
  
 while False:
 {
-   rosservice call /turtle2/teleport_absolute 2 3 0
+   rosservice call /turtle1/teleport_absolute 2 3 0
    a = 1 + b
    
    
