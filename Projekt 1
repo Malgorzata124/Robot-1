@@ -1,6 +1,54 @@
- mkdir python_robot-1
-import rospy
+mkdir python_robot-1
 cd python_robot-1
 mkdir scr
-print("Witaj!")
-is_active = False
+# Zapytanie się o obszar poszukiwań
+print("Witaj! Jaki obszar chcesz przeszukac?")
+? Jak wpisać zmienną od urzytkownika ?
+# Utworzenie wiadomości o dla zmiennych
+rosmsg show std_msgs/String
+
+from std_msgs.msg import a
+n_tasks_publisher1 = rospy.Publisher("zmienna_x", a, queue_size=10)
+msg = a
+
+from std_msgs.msg import b
+n_tasks_publisher2 = rospy.Publisher("zmienna_y", b, queue_size=10)
+msg = b
+# Tworzenie robota
+rosservice type /spawn
+rossrv show turtlesim/Spawn
+# Wyświetlenie informacji o typie wiadomości serwisowej
+rosservice type /turtle1/set_pen
+
+# Wyłączenie pisaka
+rosservice call /turtle2/set_pen 255 0 0 0 True
+# Ustawienie robota we właściwym miejscu
+rosservice call /turtle2/teleport_absolute 0 0 0
+# Włączenie pisaka
+rosservice call /turtle2/set_pen 255 0 0 4 False
+
+
+import rospy
+node_name= "Robot_poszukiwawczy" 
+rospy.init_node(node_name, anonymous=True)
+
+
+if czlowiek = False:
+i = 0
+k = 0
+rosservice call /turtle2/teleport_absolute i k 0
+while False: 
+i += 1
+k += 1
+if i == a && k == b :
+break 
+
+elif czlowiek == True:
+print("Znaleziono czlowieka")
+rosmsg show geometry_msgs/Pose
+rossrv show turtlesim/Kill
+
+else:
+print("Error")
+rossrv show turtlesim/Kill
+
