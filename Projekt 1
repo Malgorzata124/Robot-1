@@ -4,6 +4,24 @@ mkdir scr
 # Zapytanie się o obszar poszukiwań
 print("Witaj! Jaki obszar chcesz przeszukac?")
 ? Jak wpisać zmienną od urzytkownika ?
+
+from geometry_msgs.msg import Twist
+twist_publisher= rospy.Publisher("/turtle1/cmd_vel/slider",Twist,queue_size=10)
+def move_robot(forward_vel=5,rotation_vel=5):
+'''A function to move turtle from turtlesim simulation
+ Args:
+ forward_vel (float): Linear velocity
+ rotation_vel (float): Angular velocity'''
+message=Twist()
+message.angular.z=rotation_vel
+message.linear.x=forward_vel
+twist_publisher.publish(message)
+print(forward_vel)
+print(rotation_vel)
+widgets.interact(move_robot,
+forward_vel=widgets.FloatSlider(min=-10,max=10,value=0,
+orientation="vertical"),
+rotation_vel=widgets.FloatSlider(min=-10,max=10,value=0))
 # Utworzenie wiadomości o dla zmiennych
 rosmsg show std_msgs/String
 
