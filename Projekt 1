@@ -1,3 +1,4 @@
+cd Desktop/
 # Zapytanie się o obszar poszukiwań
 print("Witaj!")
 a = 10
